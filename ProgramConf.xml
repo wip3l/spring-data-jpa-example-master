@@ -1,0 +1,28 @@
+<allprograms> 
+  <programs>
+    <program>
+      <ip>192.168.6.132</ip>
+      <user>root</user>
+      <psword>123456</psword>
+       <province>江苏</province>
+      <processes>
+        <soft__Process>
+          <pid>1</pid>
+          <main>Broker江苏</main>
+          <type>broker</type>
+          <run__dir>/home/swmid/jn-powerpiping/bin/</run__dir>
+          <log__file>/xyq/logs/broker.log</log__file>
+          <dead__rule>log_no_refresh_20_m</dead__rule>
+          <kill__cmd>ps -eaf |grep BrokerStartup| grep -v grep | cut -c 9-15| xargs kill -9</kill__cmd>
+          <restart__cmd>su swmid -c "cd /home/swmid/jn-powerpiping/bin/;./ppbroker stop ; ./ppbrker start"</restart__cmd>
+        </soft__Process>
+      </processes>
+        <msgqueue>
+  	<ip>192.168.1.111</ip>
+  	<user>root</user>
+  	<password>123456</password>
+  	<cmd>cat /xyq/logs/topic.log</cmd>
+  </msgqueue>
+    </program>
+  </programs>
+</allprograms>
